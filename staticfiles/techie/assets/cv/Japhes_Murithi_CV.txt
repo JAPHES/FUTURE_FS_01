@@ -1,0 +1,21 @@
+Japhes Murithi
+Software Engineer | Fullstack Developer | Designer | Mentor
+
+Contact
+- Phone: 07698093
+- Email: japhesmurithi@gmail.com
+
+Profile
+Software engineer focused on delivering clean, scalable, and user-centered web applications.
+Experienced in backend API design, frontend development, and production-ready deployment workflows.
+Provides mentorship on code quality, debugging, and software architecture best practices.
+
+Core Skills
+- Python and Django
+- JavaScript, HTML, and CSS
+- REST API development
+- UI/UX implementation
+- Code review and mentoring
+
+Availability
+Available for remote and on-site software development projects.
