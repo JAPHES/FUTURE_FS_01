@@ -4,26 +4,19 @@
     {
       "src": "api/index.py",
       "use": "@vercel/python",
-      "config": {
-        "runtime": "vercel-python@0.9.2"
-      }
+      "config": { "runtime": "vercel-python@0.9.2" }
     }
   ],
   "routes": [
-    {
-      "src": "/static/(.*)",
-      "dest": "/staticfiles/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/api/index.py"
-    }
+    { "src": "/static/(.*)", "dest": "/staticfiles/$1" },
+    { "src": "/(.*)", "dest": "/api/index.py" }
   ],
   "installCommand": "pip install -r requirements.txt",
-  "buildCommand": "python manage.py collectstatic --noinput --clear",
+  "buildCommand": "python manage.py collectstatic --noinput",
   "env": {
     "DJANGO_SETTINGS_MODULE": "japhestech.settings",
     "SECRET_KEY": "your-secret-key",
-    "DEBUG": "False"
+    "DEBUG": "False",
+    "VERCEL_URL": "japhestech.vercel.app"
   }
 }
