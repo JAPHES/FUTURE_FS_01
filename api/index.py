@@ -1,11 +1,11 @@
 """
-Serverless entrypoint for Django on Vercel.
+Serverless handler for Django on Vercel.
 
-- Vercel injects environment variables automatically (no .env load needed).
-- Sets DJANGO_SETTINGS_MODULE to japhestech.settings.
-- Initializes the Django WSGI application.
-- Wraps the app with WhiteNoise to serve /static/ from STATIC_ROOT.
-- Exposes `app`, which Vercel’s Python runtime expects.
+- Vercel automatically provides environment variables; no manual .env loading needed.
+- Sets DJANGO_SETTINGS_MODULE to `japhestech.settings`.
+- Initializes Django’s WSGI application via get_wsgi_application().
+- Wraps the WSGI app with WhiteNoise so collected static files in STATIC_ROOT are served at /static/.
+- Exposes `app`, which Vercel’s Python runtime looks for.
 """
 
 import os
@@ -19,12 +19,12 @@ from whitenoise import WhiteNoise
 BASE_DIR = Path(__file__).resolve().parent.parent
 sys.path.append(str(BASE_DIR))
 
-# Configure Django settings for this serverless process
+# Ensure Django knows which settings to use (overridden by Vercel env if set)
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "japhestech.settings")
 
-# Initialize Django WSGI application
+# Initialize the standard Django WSGI application
 django_app = get_wsgi_application()
 
-# Serve collected static files from STATIC_ROOT at /static/
+# Serve static files collected into STATIC_ROOT at the /static/ URL prefix
 static_root = os.getenv("STATIC_ROOT", str(BASE_DIR / "staticfiles"))
 app = WhiteNoise(django_app, root=static_root, prefix="static/")
