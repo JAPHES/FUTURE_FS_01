@@ -4,7 +4,7 @@
   "buildCommand": "python manage.py collectstatic --noinput",
   "functions": {
     "api/index.py": {
-      "runtime": "vercel-python@3.11"
+      "runtime": "vercel-python@0.9.2"
     }
   },
   "routes": [
