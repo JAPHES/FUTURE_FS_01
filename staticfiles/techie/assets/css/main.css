@@ -964,11 +964,29 @@ section,
 .services .service-item {
   background-color: var(--surface-color);
   box-shadow: 0px 5px 90px 0px rgba(0, 0, 0, 0.1);
-  padding: 60px 30px;
+  padding: 30px;
   transition: all ease-in-out 0.3s;
   border-radius: 18px;
   border-bottom: 5px solid var(--surface-color);
   height: 100%;
+}
+
+.services .service-item .service-thumb {
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  aspect-ratio: 4 / 3;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.services .service-item .service-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.02);
+  transition: transform 0.35s ease;
 }
 
 .services .service-item .icon {
@@ -999,6 +1017,10 @@ section,
   margin-bottom: 0;
 }
 
+.services .service-item:hover .service-thumb img {
+  transform: scale(1.05);
+}
+
 @media (min-width: 1365px) {
   .services .service-item:hover {
     transform: translateY(-10px);
@@ -1008,6 +1030,81 @@ section,
   .services .service-item:hover h3 {
     color: var(--accent-color);
   }
+}
+
+/*--------------------------------------------------------------
+# Certificates Page
+--------------------------------------------------------------*/
+.banner-small {
+  padding: 120px 0 60px;
+  background: linear-gradient(120deg, rgba(19, 15, 64, 0.08), rgba(0, 173, 181, 0.06));
+}
+
+.banner-small .eyebrow {
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+.banner-illustration {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.12);
+}
+
+.banner-illustration img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.certificates .certificate-card {
+  background: var(--surface-color);
+  border-radius: 18px;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  height: 100%;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.certificates .certificate-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 60px rgba(0, 0, 0, 0.12);
+}
+
+.certificates .certificate-media {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.certificates .certificate-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.certificates .certificate-body {
+  padding: 22px 22px 26px;
+}
+
+.certificates .certificate-meta {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-color);
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.certificates .certificate-body h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.certificates .certificate-body p {
+  margin: 0;
+  color: var(--default-color);
 }
 
 /*--------------------------------------------------------------
