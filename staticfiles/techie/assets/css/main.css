@@ -19,7 +19,7 @@
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
+  --background-color: #f5f3ee; /* Background color for the entire website, including individual sections */
   --default-color: #4e4e4e; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #0a090f; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #0078ff; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
@@ -37,7 +37,7 @@
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
-  --background-color: #f9f9f9;
+  --background-color: #f0ede7;
   --surface-color: #ffffff;
 }
 
@@ -1064,6 +1064,8 @@ section,
   box-shadow: 0 10px 50px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   height: 100%;
+  display: flex;
+  flex-direction: column;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -1075,17 +1077,22 @@ section,
 .certificates .certificate-media {
   aspect-ratio: 16 / 9;
   overflow: hidden;
+  background: color-mix(in srgb, var(--background-color), #ffffff 40%);
+  padding: 10px;
 }
 
 .certificates .certificate-media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
 .certificates .certificate-body {
   padding: 22px 22px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .certificates .certificate-meta {
