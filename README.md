@@ -15,15 +15,15 @@ Personal portfolio site built with Django and deployed on Vercel using Python se
    - Static files are served by Django in debug.
 
 ## Deployment (Vercel)
-- Build: `pip install -r requirements.txt`  
-- Collect static: `python manage.py collectstatic --noinput --clear`  
-- Serverless entrypoint: `api/index.py` (WSGI wrapped with WhiteNoise)  
-- Routes: all requests go to `api/index.py` (WhiteNoise serves `/static/` from `staticfiles`).  
+- Build: `bash build_files.sh` (installs deps and runs `collectstatic`)  
+- Static files: collected into `/public/static` and served by Vercel's filesystem handler  
+- Serverless entrypoint: `api/index.py` (WSGI wrapped with WhiteNoise as a fallback)  
+- Routes: filesystem first, then all remaining requests go to `api/index.py`  
 - Required env vars:
   - `DJANGO_SETTINGS_MODULE=japhestech.settings`
   - `SECRET_KEY=your-secret-key`
   - `DEBUG=False`
-  - `VERCEL_URL=japhestec.vercel.app`
+  - `VERCEL_URL=japhestech.vercel.app`
 
 ## Live Site
-https://japhestec.vercel.app/
+https://japhestech.vercel.app/
