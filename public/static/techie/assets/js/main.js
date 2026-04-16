@@ -169,8 +169,24 @@
 
   /**
    * Initiate Pure Counter
+   * Guarded for deployments where vendor scripts may load out of order.
    */
-  new PureCounter();
+  if (typeof PureCounter !== 'undefined') {
+    new PureCounter();
+  } else {
+    document.querySelectorAll('.purecounter').forEach((counter) => {
+      const endRaw = counter.getAttribute('data-purecounter-end');
+      const suffix = counter.getAttribute('data-purecounter-suffix') || '';
+      const fallbackText = counter.textContent && counter.textContent.trim();
+      const end = Number(endRaw);
+
+      if (!Number.isNaN(end)) {
+        counter.textContent = `${end}${suffix}`;
+      } else if (fallbackText) {
+        counter.textContent = fallbackText;
+      }
+    });
+  }
 
   /**
    * Initiate glightbox
