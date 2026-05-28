@@ -12,7 +12,7 @@
   <!-- Favicons -->
   <link href="{% static 'techie/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
   
-  <!-- Dynamic Favicon with JM Initials -->
+  <!-- Dynamic Favicon with J Initial -->
   <script>
     (function() {
       const canvas = document.createElement('canvas');
@@ -20,8 +20,8 @@
       canvas.height = 64;
       const ctx = canvas.getContext('2d');
       
-      // Background color (blue accent)
-      ctx.fillStyle = '#0078ff';
+      // Background color
+      ctx.fillStyle = '#0f766e';
       ctx.fillRect(0, 0, 64, 64);
       
       // Text
@@ -29,7 +29,7 @@
       ctx.font = 'bold 32px Poppins, sans-serif';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-      ctx.fillText('BJ', 32, 32);
+      ctx.fillText('J', 32, 32);
       
       // Replace any existing favicon links to avoid Bootstrap "B" icon fallback
       document.querySelectorAll("link[rel*='icon']").forEach((node) => node.remove());
@@ -55,6 +55,8 @@
 
   <!-- Main CSS File -->
   <link href="{% static 'techie/assets/css/main.css' %}" rel="stylesheet">
+
+</head>
 
 <body class="index-page">
 
@@ -89,9 +91,20 @@
 
       <img src="{% static 'techie/assets/img/hero-imag2.jpg' %}" alt="" data-aos="fade-in">
 
-      <div class="container d-flex flex-column align-items-center justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
-        <h2>I am Japhes Murithi</h2>
-        <p><span class="typed" data-typed-items="Software Engineer, Fullstack Developer, Notion Campus Leader,Technical Lead GDG Taita Taveta University,Former Technical Mentor at eMobilis"></span></p>
+      <div class="container hero-content" data-aos="fade-up" data-aos-delay="100">
+        <div class="hero-eyebrow">Django / APIs / Machine Learning / IoT</div>
+        <h1>Japhes Murithi</h1>
+        <p class="hero-lead">I build reliable web applications, machine learning tools, and connected systems that turn ideas into practical digital products.</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary"><i class="bi bi-grid-3x3-gap"></i> View Projects</a>
+          <a href="#contact" class="btn btn-outline-light"><i class="bi bi-send"></i> Start a Project</a>
+          <a href="https://github.com/JAPHES" class="btn btn-ghost-light" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i> GitHub</a>
+        </div>
+        <div class="hero-highlights" aria-label="Core strengths">
+          <span><i class="bi bi-code-slash"></i> Fullstack Django</span>
+          <span><i class="bi bi-cpu"></i> ML and IoT Apps</span>
+          <span><i class="bi bi-people"></i> Mentorship</span>
+        </div>
       </div>
 
     </section><!-- /Hero Section -->
@@ -104,15 +117,38 @@
         <div class="row gy-4 align-items-center">
           <div class="col-lg-7 order-2 order-lg-1">
             <div class="about-me about-me-card">
-              <span class="about-eyebrow">IT Technician, Fullstack Developer & Community Leader</span>
-              <h3 class="about-title">Passionate IT Technician, Fullstack Developer, and Community Leader</h3>
+              <span class="about-eyebrow">Software Engineer, IT Technician & Community Leader</span>
+              <h3 class="about-title">I build useful products with clean code and clear communication.</h3>
               <p class="about-lead">
-                I build reliable, user-focused digital solutions with a strong emphasis on quality, clarity, and real-world impact. Beyond coding, I take pride in mentoring upcoming developers, leading by example, and contributing to tech communities. Guided by faith, integrity, and purpose, I strive to use technology not just to solve problems, but to create meaningful and lasting value.
+                My work combines Django, backend APIs, responsive interfaces, machine learning, and IoT integrations. I focus on systems that are easy to use, maintain, and improve after launch.
               </p>
+
+              <div class="about-trust-bar">
+                <span class="trust-chip"><i class="bi bi-check2-circle"></i> Django fullstack</span>
+                <span class="trust-chip"><i class="bi bi-check2-circle"></i> ML prototypes</span>
+                <span class="trust-chip"><i class="bi bi-check2-circle"></i> IoT dashboards</span>
+              </div>
+
+              <div class="about-highlights">
+                <div class="about-highlight">
+                  <i class="bi bi-diagram-3"></i>
+                  <div>
+                    <h5>Structured delivery</h5>
+                    <p>I break ideas into clear features, build with maintainable patterns, and keep deployment in mind from the start.</p>
+                  </div>
+                </div>
+                <div class="about-highlight">
+                  <i class="bi bi-mortarboard"></i>
+                  <div>
+                    <h5>Technical mentorship</h5>
+                    <p>I support learners and teams through practical coaching, code reviews, and hands-on project guidance.</p>
+                  </div>
+                </div>
+              </div>
 
               <div class="about-actions">
                 <a href="#projects" class="btn btn-primary btn-sm">View Projects</a>
-                <a href="https://github.com/JAPHES" class="btn btn-primary btn-sm">View Github</a>
+                <a href="https://github.com/JAPHES" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">View GitHub</a>
                 <a href="#contact" class="btn btn-outline-primary btn-sm">Let's Work Together</a>
                 <a href="{% static 'techie/assets/cv/Japhes_Murithi.pdf' %}" class="btn btn-dark btn-sm" download>Download CV</a>
               </div>
@@ -136,7 +172,7 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Resume</h2>
-        <p>Professional software development services focused on quality, clarity, and business impact.</p>
+        <p>Education, leadership, and hands-on experience behind my software work.</p>
       </div><!-- End Section Title -->
 
       <div class="container">
@@ -263,14 +299,14 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Services</h2>
-        <p>Professional software development services focused on quality, clarity, and business impact.</p>
+        <p>Focused technical support for teams, learners, and businesses that need dependable digital products.</p>
       </div><!-- End Section Title -->
 
       <div class="container">
 
         <div class="row gy-4">
 
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item position-relative">
               <div class="service-thumb">
                 <i class="bi bi-globe"></i>
@@ -280,7 +316,7 @@
             </div>
           </div><!-- End Service Item -->
 
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="service-item position-relative">
               <div class="service-thumb">
                 <i class="bi bi-palette"></i>
@@ -290,7 +326,7 @@
             </div>
           </div><!-- End Service Item -->
 
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="service-item position-relative">
               <div class="service-thumb">
                 <i class="bi bi-person-workspace"></i>
@@ -300,7 +336,7 @@
             </div>
           </div><!-- End Service Item -->
 
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
             <div class="service-item position-relative">
               <div class="service-thumb">
                 <i class="bi bi-diagram-2"></i>
@@ -310,13 +346,23 @@
             </div>
           </div><!-- End Service Item -->
 
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="500">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
             <div class="service-item position-relative">
               <div class="service-thumb">
                 <i class="bi bi-cpu"></i>
               </div>
               <h3>IoT Projects</h3>
               <p>Smart device integration and IoT solutions with embedded systems, sensors, and real-time data processing.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-item position-relative">
+              <div class="service-thumb">
+                <i class="bi bi-graph-up-arrow"></i>
+              </div>
+              <h3>Machine Learning Apps</h3>
+              <p>Practical prediction tools and model-backed web apps built with Django and scikit-learn workflows.</p>
             </div>
           </div><!-- End Service Item -->
 
@@ -380,109 +426,136 @@
       <div class="container">
         <div class="row gy-4">
 
+          <div class="col-lg-8 col-md-12" data-aos="fade-up" data-aos-delay="100">
+            <div class="card project-card project-featured h-100 border-0 shadow-sm">
+              <img src="{% static 'techie/assets/img/portfolio/sports_predictor.jpeg' %}" class="card-img-top" alt="Sports predictor web app">
+              <div class="card-body d-flex flex-column">
+                <span class="project-kicker">Featured machine learning project</span>
+                <h5 class="card-title">Sports Predictor</h5>
+                <p class="card-text">Sports Predictor is a Django machine learning web app that recommends a suitable sport for a learner based on age, height, and gender. The prediction model is a saved scikit-learn decision tree model.</p>
+                <div class="project-tags">
+                  <span>Django</span>
+                  <span>Machine Learning</span>
+                  <span>scikit-learn</span>
+                  <span>Decision Tree</span>
+                </div>
+                <div class="project-link-group d-flex flex-wrap gap-2 mt-auto">
+                  <a href="https://sportpredictor-production.up.railway.app" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> View Live</a>
+                  <a href="https://github.com/JAPHES/sportpredictor" class="btn btn-outline-dark btn-sm" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i> View on GitHub</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="card h-100 border-0 shadow-sm">
+            <div class="card project-card h-100 border-0 shadow-sm">
               <img src="{% static 'techie/assets/img/portfolio/app-1.jpg' %}" class="card-img-top" alt="Task manager app">
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title">Task Manager Platform</h5>
                 <p class="card-text">Fullstack productivity app with authentication, project boards, and role-based permissions.</p>
-                <div class="d-flex flex-wrap gap-2 mt-auto">
+                <div class="project-tags">
+                  <span>Fullstack</span>
+                  <span>Auth</span>
+                  <span>Project Boards</span>
+                </div>
+                <div class="project-link-group d-flex flex-wrap gap-2 mt-auto">
                   <!-- <a href="https://the-maitaining-your-task-in-order-project.onrender.com" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">View Live</a> -->
-                  <a href="https://github.com/JAPHES/The-maitaining-your-task-in-order-project-" class="btn btn-outline-dark btn-sm" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                  <a href="https://github.com/JAPHES/The-maitaining-your-task-in-order-project-" class="btn btn-outline-dark btn-sm" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i> View on GitHub</a>
                 </div>
               </div>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="card h-100 border-0 shadow-sm">
+            <div class="card project-card h-100 border-0 shadow-sm">
               <img src="{% static 'techie/assets/img/portfolio/eccomerce.jpg' %}" class="card-img-top" alt="E-commerce dashboard">
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title">HarvestFarms_Ecommerce</h5>
                 <p class="card-text">Dashboard for inventory, orders, and analytics with API integration and performance tracking.</p>
-                <div class="d-flex flex-wrap gap-2 mt-auto">
+                <div class="project-tags">
+                  <span>E-commerce</span>
+                  <span>Dashboard</span>
+                  <span>API</span>
+                </div>
+                <div class="project-link-group d-flex flex-wrap gap-2 mt-auto">
                   <!-- <a href="https://harvestfarms-ecommercewebsite.onrender.com" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">View Live</a> -->
-                  <a href="https://github.com/JAPHES/HarvestFarms_EcommerceWebsite" class="btn btn-outline-dark btn-sm" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                  <a href="https://github.com/JAPHES/HarvestFarms_EcommerceWebsite" class="btn btn-outline-dark btn-sm" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i> View on GitHub</a>
                 </div>
               </div>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="card h-100 border-0 shadow-sm">
+            <div class="card project-card h-100 border-0 shadow-sm">
               <img src="{% static 'techie/assets/img/portfolio/uppa.jpg' %}" class="card-img-top" alt="Fintech analytics platform">
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title">Universal Partnership Association</h5>
                 <p class="card-text">Data-driven platform for financial reporting, KPI monitoring, and secure user access control.</p>
-                <div class="d-flex flex-wrap gap-2 mt-auto">
+                <div class="project-tags">
+                  <span>Finance</span>
+                  <span>Analytics</span>
+                  <span>Access Control</span>
+                </div>
+                <div class="project-link-group d-flex flex-wrap gap-2 mt-auto">
                   <!-- <a href="https://uppawebsite.onrender.com" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">View Live</a> -->
-                  <a href="https://github.com/JAPHES/uppaweb" class="btn btn-outline-dark btn-sm" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                  <a href="https://github.com/JAPHES/uppaweb" class="btn btn-outline-dark btn-sm" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i> View on GitHub</a>
                 </div>
               </div>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="card h-100 border-0 shadow-sm">
-              <img src="{% static 'techie/assets/img/portfolio/clintonportfolio.jpg' %}" class="card-img-top" alt="Learning management system">
+            <div class="card project-card h-100 border-0 shadow-sm">
+              <img src="{% static 'techie/assets/img/portfolio/clintonportfolio.jpg' %}" class="card-img-top" alt="Portfolio website project">
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title">Portfolio Website</h5>
-                <p class="card-text">A professional web portfolio that showcases my projects, technical skills, and experience. It includes sections for projects, about me, contact information, and a responsive interface that allows visitors and potential
-                  employers to easily explore my work and reach out.</p>
-                <div class="d-flex flex-wrap gap-2 mt-auto">
+                <p class="card-text">A responsive portfolio site that presents projects, skills, experience, and contact details in a clear professional layout.</p>
+                <div class="project-tags">
+                  <span>Portfolio</span>
+                  <span>Responsive UI</span>
+                  <span>Branding</span>
+                </div>
+                <div class="project-link-group d-flex flex-wrap gap-2 mt-auto">
                   <!-- <a href="https://analysisbyclinton.onrender.com" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">View Live</a> -->
-                  <a href="https://github.com/JAPHES/clintonweb" class="btn btn-outline-dark btn-sm" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                  <a href="https://github.com/JAPHES/clintonweb" class="btn btn-outline-dark btn-sm" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i> View on GitHub</a>
                 </div>
               </div>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="card h-100 border-0 shadow-sm">
-              <img src="{% static 'techie/assets/img/portfolio/travel.jpg' %}" class="card-img-top" alt="Healthcare booking app">
+            <div class="card project-card h-100 border-0 shadow-sm">
+              <img src="{% static 'techie/assets/img/portfolio/travel.jpg' %}" class="card-img-top" alt="Safari Connect travel platform">
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title">Safari Connect</h5>
-                <p class="card-text">Safari Connect is a web-based platform that connects travelers
-                  with verified drivers to book rides and explore destinations easily and safely.
-                  It also allows users to discover and book tours, communicate with drivers in real time,
-                  and manage their travel activities in one place. The system includes safety features like driver
-                  verification, messaging,
-                  and SOS alerts, along with an admin dashboard for monitoring and management.</p>
-                <div class="d-flex flex-wrap gap-2 mt-auto">
+                <p class="card-text">A travel platform for booking rides and tours with verified drivers, messaging, SOS support, and admin monitoring.</p>
+                <div class="project-tags">
+                  <span>Travel</span>
+                  <span>Booking</span>
+                  <span>Safety</span>
+                </div>
+                <div class="project-link-group d-flex flex-wrap gap-2 mt-auto">
                   <!-- <a href="https://safari-connect.onrender.com" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">View Live</a> -->
-                  <a href="https://github.com/JAPHES/safari_connectplatform" class="btn btn-outline-dark btn-sm" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                  <a href="https://github.com/JAPHES/safari_connectplatform" class="btn btn-outline-dark btn-sm" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i> View on GitHub</a>
                 </div>
               </div>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="card h-100 border-0 shadow-sm">
-              <img src="{% static 'techie/assets/img/portfolio/energyy.jpg' %}" class="card-img-top" alt="Developer collaboration tool">
+            <div class="card project-card h-100 border-0 shadow-sm">
+              <img src="{% static 'techie/assets/img/portfolio/energyy.jpg' %}" class="card-img-top" alt="Energy monitoring dashboard">
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title">Energy Monitoring System</h5>
-                <p class="card-text">Energy Monitor is an IoT-based Django
-                  application that collects and stores real-time energy data (voltage, current, power,
-                  and energy) from devices like NodeMCU/ESP8266 through REST APIs. It provides a live
-                  ashboard with charts and remote control features, allowing users to
-                  visualize energy usage and control devices such as a fan directly from the system.</p>
-                <div class="d-flex flex-wrap gap-2 mt-auto">
-                  <!-- <a href="https://github.com/JAPHES/energy_monitoringsystem" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">View Live</a> -->
-                  <a href="https://github.com/JAPHES/energy_monitoringsystem" class="btn btn-outline-dark btn-sm" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                <p class="card-text">An IoT Django app that receives voltage, current, power, and energy readings through REST APIs and displays live usage charts.</p>
+                <div class="project-tags">
+                  <span>Django</span>
+                  <span>IoT</span>
+                  <span>REST API</span>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="card h-100 border-0 shadow-sm">
-              <img src="{% static 'techie/assets/img/portfolio/sports_predictor.jpeg' %}" class="card-img-top" alt="Sports predictor web app">
-              <div class="card-body d-flex flex-column">
-                <h5 class="card-title">Sports Predictor</h5>
-                <p class="card-text">Sports Predictor is a Django machine learning web app that recommends a suitable sport for a learner based on age, height, and gender. The prediction model is a saved scikit-learn decision tree model.</p>
-                <div class="d-flex flex-wrap gap-2 mt-auto">
-                  <a href="https://sportpredictor-production.up.railway.app" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">View Live</a>
-                  <a href="https://github.com/JAPHES/sportpredictor" class="btn btn-outline-dark btn-sm" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                <div class="project-link-group d-flex flex-wrap gap-2 mt-auto">
+                  <!-- <a href="https://github.com/JAPHES/energy_monitoringsystem" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">View Live</a> -->
+                  <a href="https://github.com/JAPHES/energy_monitoringsystem" class="btn btn-outline-dark btn-sm" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i> View on GitHub</a>
                 </div>
               </div>
             </div>
@@ -567,7 +640,7 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Contact</h2>
-        <p>Professional software development services focused on quality, clarity, and business impact.</p>
+        <p>Share your idea, timeline, or challenge and I will respond with a clear next step.</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -590,7 +663,7 @@
                 <i class="bi bi-telephone flex-shrink-0"></i>
                 <div>
                   <h3>Call Me</h3>
-                  <p>07698093</p>
+                  <p>0769809329</p>
                 </div>
               </div>
             </div><!-- End Info Item -->
@@ -652,7 +725,7 @@
 
     <div class="container">
       <div class="copyright text-center ">
-        <p>&copy; <span>Copyright</span> <strong class="px-1 sitename">MyPortfolio</strong> <span>All Rights Reserved</span></p>
+        <p>&copy; <span>Copyright</span> <strong class="px-1 sitename">Japhestech</strong> <span>All Rights Reserved</span></p>
       </div>
       <div class="social-links d-flex justify-content-center">
         <a href="https://x.com/JaphesMurithi" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="bi bi-twitter-x"></i></a>
