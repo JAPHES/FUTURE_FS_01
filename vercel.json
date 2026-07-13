@@ -23,6 +23,8 @@
     "DJANGO_SETTINGS_MODULE": "japhestech.settings",
     "SECRET_KEY": "your-secret-key",
     "DEBUG": "False",
-    "VERCEL_URL": "japhestech.vercel.app"
+    "VERCEL_URL": "japhestech.vercel.app",
+    "ALLOWED_HOSTS": "japhes.secora.dev,japhestech.vercel.app,.vercel.app",
+    "CSRF_TRUSTED_ORIGINS": "https://japhes.secora.dev,https://japhestech.vercel.app,https://*.vercel.app"
   }
 }

@@ -8,12 +8,17 @@ SECRET_KEY = os.getenv("SECRET_KEY", "django-insecure-change-this-in-production"
 # Default DEBUG to True for local development; set DEBUG=false in production envs (e.g., Vercel)
 DEBUG = os.getenv("DEBUG", "True").lower() == "true"
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "*").split(",")
+ALLOWED_HOSTS = [
+    host.strip()
+    for host in os.getenv(
+        "ALLOWED_HOSTS",
+        "localhost,127.0.0.1,.vercel.app,japhes.secora.dev",
+    ).split(",")
+    if host.strip()
+]
 VERCEL_URL = os.getenv("VERCEL_URL")
 if VERCEL_URL:
     ALLOWED_HOSTS.append(VERCEL_URL)
-# allow all vercel preview domains and localhost
-ALLOWED_HOSTS += ["localhost", "127.0.0.1", ".vercel.app"]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -78,7 +83,17 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-CSRF_TRUSTED_ORIGINS = [f'https://{VERCEL_URL}'] if VERCEL_URL else []
-CSRF_TRUSTED_ORIGINS += ["https://*.vercel.app"]
+CSRF_TRUSTED_ORIGINS = [
+    origin.strip()
+    for origin in os.getenv(
+        "CSRF_TRUSTED_ORIGINS",
+        "https://japhes.secora.dev,https://*.vercel.app",
+    ).split(",")
+    if origin.strip()
+]
+if VERCEL_URL:
+    vercel_origin = f"https://{VERCEL_URL}"
+    if vercel_origin not in CSRF_TRUSTED_ORIGINS:
+        CSRF_TRUSTED_ORIGINS.append(vercel_origin)
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

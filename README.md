@@ -42,6 +42,17 @@ Passionate IT Technician with deep faith, honesty, and diligence. Expert in solv
   - `SECRET_KEY=your-secret-key`
   - `DEBUG=False`
   - `VERCEL_URL=japhestech.vercel.app`
+  - `ALLOWED_HOSTS=japhes.secora.dev,japhestech.vercel.app,.vercel.app`
+  - `CSRF_TRUSTED_ORIGINS=https://japhes.secora.dev,https://japhestech.vercel.app,https://*.vercel.app`
+
+### Custom domain
+
+The production portfolio uses `japhes.secora.dev`. Add this domain to the Vercel project, then create the CNAME record requested by Vercel in the `secora.dev` DNS zone:
+
+- Type: `CNAME`
+- Name/Host: `japhes`
+- Value/Answer: the exact CNAME target shown by Vercel
+- TTL: `300`
 
 ## Recent Updates
 - ✨ Redesigned about section with new professional identity
@@ -51,7 +62,7 @@ Passionate IT Technician with deep faith, honesty, and diligence. Expert in solv
 - 📋 Removed testimonials section for cleaner focus
 
 ## Live Site
-https://japhestech.vercel.app/
+https://japhes.secora.dev/
 
 ## Contact
 - Email: japhesmurithi@gmail.com
