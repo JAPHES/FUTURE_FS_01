@@ -17,37 +17,8 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://japhes.secora.dev/">
 
-  <!-- Favicons -->
-  <link href="{% static 'techie/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
-  
-  <!-- Dynamic Favicon with J Initial -->
-  <script>
-    (function() {
-      const canvas = document.createElement('canvas');
-      canvas.width = 64;
-      canvas.height = 64;
-      const ctx = canvas.getContext('2d');
-      
-      // Background color
-      ctx.fillStyle = '#0f766e';
-      ctx.fillRect(0, 0, 64, 64);
-      
-      // Text
-      ctx.fillStyle = '#ffffff';
-      ctx.font = 'bold 32px Poppins, sans-serif';
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.fillText('J', 32, 32);
-      
-      // Replace any existing favicon links to avoid Bootstrap "B" icon fallback
-      document.querySelectorAll("link[rel*='icon']").forEach((node) => node.remove());
-      const link = document.createElement('link');
-      link.rel = 'icon';
-      link.type = 'image/png';
-      link.href = canvas.toDataURL('image/png');
-      document.head.appendChild(link);
-    })();
-  </script>
+  <!-- Favicon -->
+  <link href="{% static 'techie/assets/img/favicon.svg' %}" rel="icon" type="image/svg+xml">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
