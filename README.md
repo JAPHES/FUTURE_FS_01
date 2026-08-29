@@ -34,7 +34,7 @@ Passionate IT Technician with deep faith, honesty, and diligence. Expert in solv
 
 ## Deployment (Vercel)
 - Vercel detects Django from `manage.py` and discovers the WSGI application automatically.
-- Build: `python manage.py collectstatic --noinput --clear`
+- Build: `python manage.py collectstatic --noinput`
 - Static files: collected into `/public/static` and served by Vercel's CDN.
 - Python runtime: pinned in `.python-version`.
 - Required env vars:
