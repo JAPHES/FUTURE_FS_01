@@ -33,10 +33,10 @@ Passionate IT Technician with deep faith, honesty, and diligence. Expert in solv
    - Static files are served by Django in debug.
 
 ## Deployment (Vercel)
-- Build: `bash build_files.sh` (installs deps and runs `collectstatic`)  
-- Static files: collected into `/public/static` and served by Vercel's filesystem handler  
-- Serverless entrypoint: `api/index.py` (WSGI wrapped with WhiteNoise as a fallback)  
-- Routes: filesystem first, then all remaining requests go to `api/index.py`  
+- Vercel detects Django from `manage.py` and discovers the WSGI application automatically.
+- Build: `python manage.py collectstatic --noinput --clear`
+- Static files: collected into `/public/static` and served by Vercel's CDN.
+- Python runtime: pinned in `.python-version`.
 - Required env vars:
   - `DJANGO_SETTINGS_MODULE=japhestech.settings`
   - `SECRET_KEY=your-secret-key`

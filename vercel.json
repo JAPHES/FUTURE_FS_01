@@ -1,24 +1,7 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "version": 2,
-  "builds": [
-    {
-      "src": "api/index.py",
-      "use": "@vercel/python",
-      "config": {
-        "runtime": "vercel-python@0.9.2",
-        "includeFiles": [
-          "techie/static/**",
-          "public/static/**"
-        ]
-      }
-    }
-  ],
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/api/index.py" }
-  ],
-  "installCommand": "pip install -r requirements.txt",
-  "buildCommand": "bash build_files.sh",
+  "buildCommand": "python manage.py collectstatic --noinput --clear",
   "env": {
     "DJANGO_SETTINGS_MODULE": "japhestech.settings",
     "SECRET_KEY": "your-secret-key",
