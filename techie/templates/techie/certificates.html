@@ -5,9 +5,9 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Certificates & Volunteer Leadership | Japhes Murithi</title>
-  <meta name="description" content="Professional certificates and volunteer leadership roles held by Japhes Murithi in software engineering, developer communities, and digital education.">
-  <meta name="keywords" content="Japhes Murithi, certificates, volunteer leadership, Google Developers, Notion Campus Leader, software engineering">
+  <title>Professional Certificates | Japhes Murithi</title>
+  <meta name="description" content="Professional certificates earned by Japhes Murithi across software engineering, artificial intelligence, entrepreneurship, and digital skills.">
+  <meta name="keywords" content="Japhes Murithi, professional certificates, software engineering, artificial intelligence, web development">
 
   <!-- Favicons -->
   <link href="{% static 'techie/assets/img/favicon.svg' %}" rel="icon" type="image/svg+xml">
@@ -26,7 +26,7 @@
   <link href="{% static 'techie/assets/css/main.css' %}" rel="stylesheet">
 </head>
 
-<body class="starter-page-page">
+<body class="starter-page-page certificates-page">
 
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
@@ -55,141 +55,121 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-7" data-aos="fade-right">
-            <p class="eyebrow text-uppercase mb-2">Credentials</p>
-            <h1 class="mb-3">Certificates & Volunteer Leadership</h1>
-            <p class="lead mb-0">Professional learning and community roles spanning software engineering, digital education, AI, and entrepreneurship.</p>
+            <p class="eyebrow text-uppercase mb-2">Verified learning</p>
+            <h1 class="mb-3">Professional Certificates</h1>
+            <p class="lead mb-0">A curated record of continuous learning across software engineering, artificial intelligence, entrepreneurship, and professional development.</p>
+            <div class="credential-highlights" aria-label="Certificate summary">
+              <span><i class="bi bi-patch-check-fill" aria-hidden="true"></i> 5 credentials</span>
+              <span><i class="bi bi-calendar3" aria-hidden="true"></i> 2024&mdash;2026</span>
+              <span><i class="bi bi-stars" aria-hidden="true"></i> Always learning</span>
+            </div>
           </div>
           <div class="col-lg-5 d-none d-lg-block" data-aos="fade-left">
             <div class="banner-illustration">
               <img src="{% static 'techie/assets/img/portfolio/certicates.jpg' %}" alt="Certificates and professional growth" fetchpriority="high" decoding="async">
+              <div class="banner-badge"><i class="bi bi-award" aria-hidden="true"></i> Professional growth</div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="volunteer-roles section light-background" aria-labelledby="volunteer-heading">
-      <div class="container">
-        <div class="section-title" data-aos="fade-up">
-          <h2 id="volunteer-heading">Volunteer Leadership</h2>
-          <p>Community roles where I have supported technical learning, collaboration, and student-led events.</p>
-        </div>
-
-        <div class="row gy-4">
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <article class="volunteer-card h-100">
-              <div class="volunteer-icon" aria-hidden="true"><i class="bi bi-google"></i></div>
-              <div class="volunteer-content">
-                <span class="volunteer-status">Volunteer Role</span>
-                <h3>Technical Lead</h3>
-                <p class="volunteer-organization">Google Developers, Taita Taveta University</p>
-                <ul>
-                  <li>Led discussions that helped students explore software engineering concepts and practices.</li>
-                  <li>Supported the organizing team in planning and hosting club events for the campus developer community.</li>
-                </ul>
-              </div>
-            </article>
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
-            <article class="volunteer-card h-100">
-              <div class="volunteer-icon" aria-hidden="true"><i class="bi bi-journal-richtext"></i></div>
-              <div class="volunteer-content">
-                <span class="volunteer-status">Volunteer Role</span>
-                <h3>Notion Campus Leader</h3>
-                <p class="volunteer-organization">Notion, Taita Taveta University</p>
-                <ul>
-                  <li>Hosted Notion-led educational events for students on campus.</li>
-                  <li>Helped learners use Notion for academic organization, productivity, and collaborative work.</li>
-                </ul>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="certificates section">
+    <section class="certificates section light-background">
       <div class="container section-title" data-aos="fade-up">
         <h2>Certificates</h2>
-        <p>Selected credentials that reflect my continuing technical and professional development.</p>
+        <p>Explore the credentials behind my technical and professional development.</p>
       </div>
       <div class="container">
-        <div class="row gy-4">
+        <div class="certificate-list">
 
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="certificate-card">
-              <div class="certificate-media">
-                <img src="{% static 'techie/assets/img/portfolio/certificate-moringa.jpg' %}" alt="Moringa School Artificial Intelligence certificate" loading="lazy" decoding="async">
-              </div>
+          <article class="certificate-card" data-aos="fade-up" data-aos-delay="100">
+              <a class="certificate-media" href="{% static 'techie/assets/img/portfolio/certificate-moringa.jpg' %}" target="_blank" rel="noopener noreferrer" aria-label="View the Moringa School Artificial Intelligence certificate">
+                <img class="certificate-backdrop" src="{% static 'techie/assets/img/portfolio/certificate-moringa.jpg' %}" alt="" aria-hidden="true" loading="lazy" decoding="async">
+                <img class="certificate-image" src="{% static 'techie/assets/img/portfolio/certificate-moringa.jpg' %}" alt="Moringa School Artificial Intelligence certificate" loading="lazy" decoding="async">
+                <span class="certificate-view"><i class="bi bi-arrows-fullscreen" aria-hidden="true"></i> View certificate</span>
+              </a>
               <div class="certificate-body">
-                <div class="certificate-meta">Moringa School . 2026</div>
+                <div class="certificate-meta"><i class="bi bi-patch-check-fill" aria-hidden="true"></i> Moringa School <span>&middot;</span> 2026</div>
                 <h3>Artificial Intelligence</h3>
                 <p>Completed the AI Access Program, gaining hands-on
                   experience with Generative AI tools and AI for software development.
                   Developed practical skills in AI applications, software integration,
                   and real-world problem solving.</p>
+                <div class="certificate-tags" aria-label="Skills covered">
+                  <span>Generative AI</span><span>AI Development</span>
+                </div>
               </div>
-            </div>
-          </div>
+          </article>
 
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
-            <div class="certificate-card">
-              <div class="certificate-media">
-                <img src="{% static 'techie/assets/img/portfolio/certificate-tsavo.jpg' %}" alt="Tsavo Innovation and Incubation Hub business training certificate" loading="lazy" decoding="async">
-              </div>
+          <article class="certificate-card" data-aos="fade-up" data-aos-delay="150">
+              <a class="certificate-media" href="{% static 'techie/assets/img/portfolio/certificate-tsavo.jpg' %}" target="_blank" rel="noopener noreferrer" aria-label="View the Tsavo Innovation and Incubation Hub certificate">
+                <img class="certificate-backdrop" src="{% static 'techie/assets/img/portfolio/certificate-tsavo.jpg' %}" alt="" aria-hidden="true" loading="lazy" decoding="async">
+                <img class="certificate-image" src="{% static 'techie/assets/img/portfolio/certificate-tsavo.jpg' %}" alt="Tsavo Innovation and Incubation Hub business training certificate" loading="lazy" decoding="async">
+                <span class="certificate-view"><i class="bi bi-arrows-fullscreen" aria-hidden="true"></i> View certificate</span>
+              </a>
               <div class="certificate-body">
-                <div class="certificate-meta">Tsavo Innovation and Incubation Hub . 2025</div>
+                <div class="certificate-meta"><i class="bi bi-patch-check-fill" aria-hidden="true"></i> Tsavo Innovation and Incubation Hub <span>&middot;</span> 2025</div>
                 <h3>Business Incubation Training</h3>
                 <p>Completed the program, gaining hands-on skills in business modeling,
                   feasibility analysis, and financial planning, enhancing my ability to design
                   test, and pitch scalable business solutions.</p>
+                <div class="certificate-tags" aria-label="Skills covered">
+                  <span>Business Modeling</span><span>Financial Planning</span>
+                </div>
               </div>
-            </div>
-          </div>
+          </article>
 
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="certificate-card">
-              <div class="certificate-media">
-                <img src="{% static 'techie/assets/img/portfolio/certificate-emobilis.jpg' %}" alt="eMobilis Web Development certificate" loading="lazy" decoding="async">
-              </div>
+          <article class="certificate-card" data-aos="fade-up" data-aos-delay="200">
+              <a class="certificate-media" href="{% static 'techie/assets/img/portfolio/certificate-emobilis.jpg' %}" target="_blank" rel="noopener noreferrer" aria-label="View the eMobilis Web Development certificate">
+                <img class="certificate-backdrop" src="{% static 'techie/assets/img/portfolio/certificate-emobilis.jpg' %}" alt="" aria-hidden="true" loading="lazy" decoding="async">
+                <img class="certificate-image" src="{% static 'techie/assets/img/portfolio/certificate-emobilis.jpg' %}" alt="eMobilis Web Development certificate" loading="lazy" decoding="async">
+                <span class="certificate-view"><i class="bi bi-arrows-fullscreen" aria-hidden="true"></i> View certificate</span>
+              </a>
               <div class="certificate-body">
-                <div class="certificate-meta">eMobilis Mobile Technology Institute · 2024</div>
+                <div class="certificate-meta"><i class="bi bi-patch-check-fill" aria-hidden="true"></i> eMobilis Mobile Technology Institute <span>&middot;</span> 2024</div>
                 <h3>Web Development</h3>
                 <p>Gained practical training in Web Development, Python, Django, JavaScript.
                    Developed hands-on skills through real-world coding projects and teamwork.
                   Strengthened ability to build scalable, functional, and user-friendly applications.</p>
+                <div class="certificate-tags" aria-label="Skills covered">
+                  <span>Python</span><span>Django</span><span>JavaScript</span>
+                </div>
               </div>
-            </div>
-          </div>
+          </article>
 
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
-            <div class="certificate-card">
-              <div class="certificate-media">
-                <img src="{% static 'techie/assets/img/portfolio/certificate-enactus.jpg' %}" alt="Enactus Kenya entrepreneurial and social impact credential" loading="lazy" decoding="async">
-              </div>
+          <article class="certificate-card" data-aos="fade-up" data-aos-delay="250">
+              <a class="certificate-media" href="{% static 'techie/assets/img/portfolio/certificate-enactus.jpg' %}" target="_blank" rel="noopener noreferrer" aria-label="View the Enactus Kenya certificate">
+                <img class="certificate-backdrop" src="{% static 'techie/assets/img/portfolio/certificate-enactus.jpg' %}" alt="" aria-hidden="true" loading="lazy" decoding="async">
+                <img class="certificate-image" src="{% static 'techie/assets/img/portfolio/certificate-enactus.jpg' %}" alt="Enactus Kenya entrepreneurial and social impact credential" loading="lazy" decoding="async">
+                <span class="certificate-view"><i class="bi bi-arrows-fullscreen" aria-hidden="true"></i> View certificate</span>
+              </a>
               <div class="certificate-body">
-                <div class="certificate-meta">ENACTUS KENYA · 2025</div>
+                <div class="certificate-meta"><i class="bi bi-patch-check-fill" aria-hidden="true"></i> Enactus Kenya <span>&middot;</span> 2025</div>
                 <h3>Entrepreneurial and Social Impact</h3>
                 <p>Presented at the ENACTUS Kenya 2025 event held at Ngong Hills, Nairobi, representing Taita Taveta
                   University. Showcased student-led projects focused on entrepreneurial and social impact, and shared
                   outcomes, lessons learned, and real-world applications with the wider community.</p>
+                <div class="certificate-tags" aria-label="Skills covered">
+                  <span>Entrepreneurship</span><span>Social Impact</span>
+                </div>
               </div>
-            </div>
-          </div>
+          </article>
 
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="certificate-card">
-              <div class="certificate-media">
-                <img src="{% static 'techie/assets/img/portfolio/certificate-alx.jpg' %}" alt="ALX Professional Foundations certificate" loading="lazy" decoding="async">
-              </div>
+          <article class="certificate-card" data-aos="fade-up" data-aos-delay="300">
+              <a class="certificate-media" href="{% static 'techie/assets/img/portfolio/certificate-alx.jpg' %}" target="_blank" rel="noopener noreferrer" aria-label="View the ALX Professional Foundations certificate">
+                <img class="certificate-backdrop" src="{% static 'techie/assets/img/portfolio/certificate-alx.jpg' %}" alt="" aria-hidden="true" loading="lazy" decoding="async">
+                <img class="certificate-image" src="{% static 'techie/assets/img/portfolio/certificate-alx.jpg' %}" alt="ALX Professional Foundations certificate" loading="lazy" decoding="async">
+                <span class="certificate-view"><i class="bi bi-arrows-fullscreen" aria-hidden="true"></i> View certificate</span>
+              </a>
               <div class="certificate-body">
-                <div class="certificate-meta">ALX . 2026</div>
+                <div class="certificate-meta"><i class="bi bi-patch-check-fill" aria-hidden="true"></i> ALX <span>&middot;</span> 2026</div>
                 <h3>Professional Foundations: Skills for the Digital Age</h3>
                 <p>Completed ALX Professional Foundations, gaining practical skills for the digital age including communication, leadership, problem solving, collaboration, remote work readiness, and professional digital productivity.</p>
+                <div class="certificate-tags" aria-label="Skills covered">
+                  <span>Professional Skills</span><span>Collaboration</span>
+                </div>
               </div>
-            </div>
-          </div>
+          </article>
 
         </div>
       </div>

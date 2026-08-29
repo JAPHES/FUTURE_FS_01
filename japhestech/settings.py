@@ -27,7 +27,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.sitemaps',
-    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'techie',
 ]
@@ -82,7 +81,18 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = BASE_DIR / 'public' / 'static'
+
+# Serve source assets directly during local development and generate
+# cache-busted, compressed assets for WhiteNoise/Vercel in production.
+STORAGES = {
+    'default': {
+        'BACKEND': 'django.core.files.storage.FileSystemStorage',
+    },
+    'staticfiles': {
+        'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage',
+    },
+}
 
 CSRF_TRUSTED_ORIGINS = [
     origin.strip()
