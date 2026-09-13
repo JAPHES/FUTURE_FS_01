@@ -143,15 +143,22 @@
    */
   const selectTyped = document.querySelector('.typed');
   if (selectTyped) {
-    let typed_strings = selectTyped.getAttribute('data-typed-items');
-    typed_strings = typed_strings.split(',');
-    new Typed('.typed', {
-      strings: typed_strings,
-      loop: true,
-      typeSpeed: 100,
-      backSpeed: 50,
-      backDelay: 2000
-    });
+    const typedSeparator = selectTyped.getAttribute('data-typed-separator') || ',';
+    const typedStrings = selectTyped.getAttribute('data-typed-items')
+      .split(typedSeparator)
+      .map((item) => item.trim());
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      selectTyped.textContent = typedStrings[0];
+    } else {
+      new Typed(selectTyped, {
+        strings: typedStrings,
+        loop: true,
+        typeSpeed: 60,
+        backSpeed: 35,
+        backDelay: 2200
+      });
+    }
   }
 
   /**
