@@ -106,13 +106,18 @@ class SeoTests(SimpleTestCase):
         )
         self.assertEqual(missing_response.status_code, 404)
 
-    def test_placeholder_pages_are_not_indexable(self):
-        for route_name in ("techie:portfolio_details", "techie:starter_page"):
+    def test_legacy_placeholder_urls_redirect_to_relevant_home_sections(self):
+        destinations = {
+            "techie:portfolio_details": "/#projects",
+            "techie:starter_page": "/#about",
+        }
+
+        for route_name, destination in destinations.items():
             with self.subTest(route_name=route_name):
                 response = self.client.get(reverse(route_name), **self.request_options)
 
-                self.assertEqual(response.status_code, 200)
-                self.assertContains(response, 'name="robots" content="noindex, follow"')
+                self.assertEqual(response.status_code, 301)
+                self.assertEqual(response["Location"], destination)
 
     @override_settings(
         DEBUG=False,

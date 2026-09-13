@@ -13,7 +13,7 @@ def home(request):
 
 
 def portfolio_details(request):
-    return render(request, "techie/portfolio-details.html")
+    return redirect(f"{reverse('techie:home')}#projects", permanent=True)
 
 
 def service_detail(request, slug):
@@ -87,7 +87,7 @@ def service_details(request):
 
 
 def starter_page(request):
-    return render(request, "techie/starter-page.html")
+    return redirect(f"{reverse('techie:home')}#about", permanent=True)
 
 
 def certificates(request):
