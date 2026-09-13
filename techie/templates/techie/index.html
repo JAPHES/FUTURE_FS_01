@@ -115,51 +115,34 @@
     <section id="about" class="about section">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4 align-items-center">
-          <div class="col-lg-7 order-2 order-lg-1">
-            <div class="about-me about-me-card">
-              <span class="about-eyebrow">Software Engineer & Technical Mentor</span>
-              <h3 class="about-title">I build useful products with clean code and clear communication.</h3>
-              <p class="about-lead">
-                My work combines Django, backend APIs, responsive interfaces, machine learning, and IoT integrations. I focus on systems that are easy to use, maintain, and improve after launch.
-              </p>
-
-              <div class="about-trust-bar">
-                <span class="trust-chip"><i class="bi bi-check2-circle"></i> Full-stack Django</span>
-                <span class="trust-chip"><i class="bi bi-check2-circle"></i> ML prototypes</span>
-                <span class="trust-chip"><i class="bi bi-check2-circle"></i> IoT dashboards</span>
-              </div>
-
-              <div class="about-highlights">
-                <div class="about-highlight">
-                  <i class="bi bi-diagram-3"></i>
-                  <div>
-                    <h5>Structured delivery</h5>
-                    <p>I break ideas into clear features, build with maintainable patterns, and keep deployment in mind from the start.</p>
-                  </div>
-                </div>
-                <div class="about-highlight">
-                  <i class="bi bi-mortarboard"></i>
-                  <div>
-                    <h5>Technical mentorship</h5>
-                    <p>I support learners and teams through practical coaching, code reviews, and hands-on project guidance.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="about-actions">
-                <a href="#projects" class="btn btn-primary btn-sm">View Projects</a>
-                <a href="https://github.com/JAPHES" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">View GitHub</a>
-                <a href="#contact" class="btn btn-outline-primary btn-sm">Let's Work Together</a>
-                <a href="{% static 'techie/assets/cv/Japhes_Murithi.pdf' %}" class="btn btn-dark btn-sm" download>Download CV</a>
-              </div>
+        <div class="about-profile">
+          <div class="about-portrait">
+            <img src="{% static 'techie/assets/img/hero-img1.jpeg' %}" alt="Portrait of Japhes Murithi">
+            <div class="about-portrait-caption">
+              <strong>Japhes Murithi</strong>
+              <span>Full-Stack Developer</span>
             </div>
           </div>
 
-          <div class="col-lg-5 order-1 order-lg-2 d-flex justify-content-center">
-            <div class="about-visual-wrap">
-              <img src="{% static 'techie/assets/img/hero-img1.jpeg' %}" class="img-fluid about-visual" alt="Japhes Murithi portrait">
+          <div class="about-content">
+            <span class="about-eyebrow">About me</span>
+            <h2>Building practical technology and stronger communities.</h2>
+            <p>
+              I am a full-stack developer passionate about building practical digital solutions that address real-world challenges. My interests span web development, cloud computing, and artificial intelligence, with a strong focus on continuous learning and innovation. Beyond developing technology, I bring people together through events, mentorship, and collaborative learning to help students grow their skills and turn ideas into impact.
+            </p>
+
+            <div class="about-focus" aria-label="Areas of focus">
+              <span>Web Development</span>
+              <span>Cloud Computing</span>
+              <span>Artificial Intelligence</span>
+              <span>Community Leadership</span>
+            </div>
+
+            <div class="about-actions">
+              <a href="#projects" class="btn btn-primary">View Projects</a>
+              <a href="{% static 'techie/assets/cv/Japhes_Murithi.pdf' %}" class="about-cv-link" download>
+                Download CV <i class="bi bi-arrow-down"></i>
+              </a>
             </div>
           </div>
         </div>
