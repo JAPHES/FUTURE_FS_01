@@ -20,6 +20,11 @@ VERCEL_URL = os.getenv("VERCEL_URL")
 if VERCEL_URL:
     ALLOWED_HOSTS.append(VERCEL_URL)
 
+CANONICAL_HOST = os.getenv("CANONICAL_HOST", "japhes.secora.dev")
+CANONICAL_SITE_URL = f"https://{CANONICAL_HOST}"
+if CANONICAL_HOST not in ALLOWED_HOSTS:
+    ALLOWED_HOSTS.append(CANONICAL_HOST)
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -33,6 +38,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'techie.middleware.CanonicalHostRedirectMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

@@ -1,175 +1,170 @@
-﻿{% load static %}
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-KE">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Service Details | Japhes Murithi</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>{{ service.page_title }}</title>
+  <meta name="description" content="{{ service.meta_description }}">
+  <meta name="author" content="Japhes Murithi">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta property="og:title" content="{{ service.page_title }}">
+  <meta property="og:description" content="{{ service.meta_description }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ canonical_url }}">
+  <meta property="og:site_name" content="Japhestech">
+  <meta property="og:locale" content="en_KE">
+  <meta property="og:image" content="https://japhes.secora.dev/static/techie/assets/img/services.jpg">
+  <meta property="og:image:alt" content="{{ service.image_alt }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ service.page_title }}">
+  <meta name="twitter:description" content="{{ service.meta_description }}">
+  <meta name="twitter:image" content="https://japhes.secora.dev/static/techie/assets/img/services.jpg">
+  <link rel="canonical" href="{{ canonical_url }}">
+  <script type="application/ld+json">{{ structured_data|safe }}</script>
 
-  <!-- Favicons -->
   <link href="{% static 'techie/assets/img/favicon.svg' %}" rel="icon" type="image/svg+xml">
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
   <link href="{% static 'techie/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
   <link href="{% static 'techie/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
   <link href="{% static 'techie/assets/vendor/aos/aos.css' %}" rel="stylesheet">
-  <link href="{% static 'techie/assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
-  <link href="{% static 'techie/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
-
-  <!-- Main CSS File -->
   <link href="{% static 'techie/assets/css/main.css' %}" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: MyPortfolio
-  * Template URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body class="service-details-page">
 
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
-      <a href="{% url 'techie:home' %}" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="{% static 'techie/assets/img/logo.png' %}" alt=""> -->
-        <h1 class="sitename">MyPortfolio</h1>
+      <a href="{% url 'techie:home' %}" class="logo d-flex align-items-center" aria-label="Japhestech home">
+        <span class="sitename">Japhestech</span>
       </a>
 
-      <nav id="navmenu" class="navmenu">
+      <nav id="navmenu" class="navmenu" aria-label="Main navigation">
         <ul>
-          <li><a href="{% url 'techie:home' %}#hero">Home<br></a></li>
+          <li><a href="{% url 'techie:home' %}#hero">Home</a></li>
           <li><a href="{% url 'techie:home' %}#about">About</a></li>
-          <li><a href="{% url 'techie:home' %}#services">Services</a></li>
-          <li><a href="{% url 'techie:home' %}#portfolio">Portfolio</a></li>
+          <li><a href="{% url 'techie:home' %}#services" class="active">Services</a></li>
+          <li><a href="{% url 'techie:home' %}#projects">Projects</a></li>
           <li><a href="{% url 'techie:home' %}#contact">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-
     </div>
   </header>
 
   <main class="main">
-
-    <!-- Page Title -->
-    <div class="page-title" data-aos="fade">
-      <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Service Details</h1>
-        <nav class="breadcrumbs">
+    <div class="page-title service-page-title" data-aos="fade">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
           <ol>
             <li><a href="{% url 'techie:home' %}">Home</a></li>
-            <li class="current">Service Details</li>
+            <li><a href="{% url 'techie:home' %}#services">Services</a></li>
+            <li class="current" aria-current="page">{{ service.name }}</li>
           </ol>
         </nav>
+        <p class="service-page-eyebrow">{{ service.eyebrow }}</p>
+        <h1>{{ service.name }}</h1>
+        <p class="service-page-summary">{{ service.summary }}</p>
       </div>
-    </div><!-- End Page Title -->
+    </div>
 
-    <!-- Service Details Section -->
     <section id="service-details" class="service-details section">
-
       <div class="container">
+        <div class="row gy-5">
+          <aside class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <nav class="services-list" aria-label="Services offered by Japhes Murithi">
+              <p class="services-list-label">Explore services</p>
+              {% for listed_service in services %}
+              <a href="{% url 'techie:service_detail' listed_service.slug %}"{% if listed_service.slug == service.slug %} class="active" aria-current="page"{% endif %}>
+                <span>{{ listed_service.number }}</span> {{ listed_service.name }}
+              </a>
+              {% endfor %}
+            </nav>
 
-        <div class="row gy-4">
-
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="services-list">
-              <a href="#" class="active">Software Development</a>
-              <a href="#">Full-Stack Web Development</a>
-              <a href="#">Backend API Engineering</a>
-              <a href="#">UI/UX Design</a>
-              <a href="#">Developer Mentorship</a>
+            <div class="service-contact-card">
+              <span>Have a project in mind?</span>
+              <h2>Let's define the next useful step.</h2>
+              <p>Share the problem, your audience, and the result you want to achieve.</p>
+              <a href="{% url 'techie:home' %}#contact" class="btn btn-primary">Discuss your project <i class="bi bi-arrow-right"></i></a>
             </div>
-
-            <h4>Practical software solutions for real business needs</h4>
-            <p>I help clients and teams build scalable software products with clear architecture, reliable backend logic, and modern user interfaces.</p>
-          </div>
+          </aside>
 
           <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
-            <img src="{% static 'techie/assets/img/services.jpg' %}" alt="" class="img-fluid services-img">
-            <h3>End-to-end software delivery from planning to production</h3>
-            <p>
-              I design and build robust systems that are easy to use, easy to maintain, and ready to scale with your goals.
-            </p>
-            <ul>
-              <li><i class="bi bi-check-circle"></i> <span>Clean architecture for backend and frontend codebases.</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Clear communication, milestones, and delivery planning.</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Mentorship support for developers and growing teams.</span></li>
-            </ul>
-            <p>
-              My workflow covers product discovery, implementation, testing, and deployment so your software is ready for production use.
-            </p>
-            <p>
-              Whether you need a new product, feature upgrades, performance improvements, or technical mentorship, I provide practical engineering support with measurable results.
-            </p>
+            <img src="{% static 'techie/assets/img/services.jpg' %}" alt="{{ service.image_alt }}" class="img-fluid services-img" width="1024" height="648">
+
+            <div class="service-introduction">
+              <h2>{{ service.heading }}</h2>
+              <p>{{ service.intro }}</p>
+            </div>
+
+            <div class="service-content-block">
+              <span class="service-section-label">What is included</span>
+              <h2>Support from the first decision to a working result</h2>
+              <ul class="service-deliverables">
+                {% for deliverable in service.deliverables %}
+                <li><i class="bi bi-check2" aria-hidden="true"></i> <span>{{ deliverable }}</span></li>
+                {% endfor %}
+              </ul>
+            </div>
+
+            <div class="service-content-block">
+              <span class="service-section-label">Working approach</span>
+              <h2>A clear, collaborative process</h2>
+              <div class="service-process-grid">
+                {% for step in service.process %}
+                <article>
+                  <span>0{{ forloop.counter }}</span>
+                  <h3>{{ step.title }}</h3>
+                  <p>{{ step.description }}</p>
+                </article>
+                {% endfor %}
+              </div>
+            </div>
+
+            <div class="service-fit">
+              <i class="bi bi-compass" aria-hidden="true"></i>
+              <div>
+                <h2>Who this service is for</h2>
+                <p>{{ service.ideal_for }}</p>
+              </div>
+            </div>
+
+            <p class="service-availability">Based in Kenya and available for remote collaboration. The scope, milestones, and handover are agreed before work begins.</p>
           </div>
-
         </div>
-
       </div>
-
-    </section><!-- /Service Details Section -->
-
+    </section>
   </main>
 
-  <a class="whatsapp-float" href="https://wa.me/254769809329" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <a class="whatsapp-float" href="https://wa.me/254769809329" target="_blank" rel="noopener noreferrer" aria-label="Chat with Japhes Murithi on WhatsApp">
     <i class="bi bi-whatsapp"></i>
   </a>
 
   <footer id="footer" class="footer accent-background">
-
     <div class="container">
-      <div class="copyright text-center ">
-        <p>&copy; <span>Copyright</span> <strong class="px-1 sitename">MyPortfolio</strong> <span>All Rights Reserved</span></p>
+      <div class="copyright text-center">
+        <p>&copy; <span>Copyright</span> <strong class="px-1 sitename">Japhestech</strong> <span>All Rights Reserved</span></p>
       </div>
       <div class="social-links d-flex justify-content-center">
-        <a href="https://x.com/JaphesMurithi" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="bi bi-twitter-x"></i></a>
-        <a href="https://github.com/JAPHES" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
-        <a href="https://www.linkedin.com/in/japhes-murithi-79178a329" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        <a href="https://x.com/JaphesMurithi" target="_blank" rel="noopener noreferrer" aria-label="Japhes Murithi on X"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://github.com/JAPHES" target="_blank" rel="noopener noreferrer" aria-label="Japhes Murithi on GitHub"><i class="bi bi-github"></i></a>
+        <a href="https://www.linkedin.com/in/japhes-murithi-79178a329" target="_blank" rel="noopener noreferrer" aria-label="Japhes Murithi on LinkedIn"><i class="bi bi-linkedin"></i></a>
       </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Built by Japhes Murithi
-      </div>
+      <div class="credits">Japhes Murithi</div>
     </div>
-
   </footer>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" aria-label="Scroll to top"><i class="bi bi-arrow-up-short"></i></a>
   <div id="preloader"></div>
 
-  <!-- Vendor JS Files -->
   <script src="{% static 'techie/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-  <script src="{% static 'techie/assets/vendor/php-email-form/validate.js' %}"></script>
   <script src="{% static 'techie/assets/vendor/aos/aos.js' %}"></script>
-  <script src="{% static 'techie/assets/vendor/typed.js/typed.umd.js' %}"></script>
-  <script src="{% static 'techie/assets/vendor/waypoints/noframework.waypoints.js' %}"></script>
-  <script src="{% static 'techie/assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
-  <script src="{% static 'techie/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
-  <script src="{% static 'techie/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
-  <script src="{% static 'techie/assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
-  <script src="{% static 'techie/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
-
-  <!-- Main JS File -->
   <script src="{% static 'techie/assets/js/main.js' %}"></script>
-
 </body>
 
 </html>
