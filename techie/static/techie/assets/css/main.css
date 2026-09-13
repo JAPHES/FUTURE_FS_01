@@ -803,6 +803,25 @@ section,
   border-color: var(--accent-color);
 }
 
+.hero .hero-profile-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.76);
+  font-family: var(--heading-font);
+  font-size: 14px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.hero .hero-profile-link i {
+  font-size: 16px;
+}
+
+.hero .hero-profile-link:hover {
+  color: var(--accent-color);
+}
+
 .hero .hero-disciplines {
   display: flex;
   flex-wrap: wrap;
