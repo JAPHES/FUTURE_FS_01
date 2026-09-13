@@ -19,43 +19,43 @@
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
-  --background-color: #f6f8fb; /* Background color for the entire website, including individual sections */
-  --default-color: #475569; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #0f172a; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #0f766e; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --background-color: #1a1033; /* Deep aubergine canvas */
+  --default-color: #d9d3e8; /* Soft lavender body copy */
+  --heading-color: #fbfaff; /* High-contrast headings */
+  --accent-color: #c4b5fd; /* Accessible lavender accent on dark surfaces */
+  --surface-color: #281a46; /* Raised plum surfaces */
+  --contrast-color: #1a1033; /* Dark text on light accent fills */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
   --nav-color: #ffffff;  /* The default color of the main navmenu links */
   --nav-hover-color: #ffffff; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
+  --nav-mobile-background-color: #281a46; /* Used as the background color for mobile navigation menu */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
-  --background-color: #eef6f5;
-  --surface-color: #ffffff;
+  --background-color: #21143d;
+  --surface-color: #2b1c4d;
 }
 
 .dark-background {
-  --background-color: #08111f;
-  --default-color: #ffffff;
+  --background-color: #120a24;
+  --default-color: #eeeaf7;
   --heading-color: #ffffff;
-  --surface-color: #111827;
-  --contrast-color: #ffffff;
+  --surface-color: #21143b;
+  --contrast-color: #1a1033;
 }
 
 .accent-background {
-  --background-color: #0f766e;
+  --background-color: #5b21b6;
   --default-color: #ffffff;
   --heading-color: #ffffff;
   --accent-color: #ffffff;
-  --surface-color: #14b8a6;
-  --contrast-color: #ffffff;
+  --surface-color: #6d28d9;
+  --contrast-color: #35106b;
 }
 
 /* Smooth scroll */
@@ -157,19 +157,26 @@ textarea:focus-visible {
 }
 
 .btn-primary {
-  --bs-btn-bg: #0f766e;
-  --bs-btn-border-color: #0f766e;
-  --bs-btn-hover-bg: #115e59;
-  --bs-btn-hover-border-color: #115e59;
-  --bs-btn-active-bg: #134e4a;
-  --bs-btn-active-border-color: #134e4a;
+  --bs-btn-color: #ffffff;
+  --bs-btn-bg: #7c3aed;
+  --bs-btn-border-color: #7c3aed;
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: #6d28d9;
+  --bs-btn-hover-border-color: #6d28d9;
+  --bs-btn-active-color: #ffffff;
+  --bs-btn-active-bg: #5b21b6;
+  --bs-btn-active-border-color: #5b21b6;
 }
 
 .btn-outline-primary {
-  --bs-btn-color: #0f766e;
-  --bs-btn-border-color: #0f766e;
-  --bs-btn-hover-bg: #0f766e;
-  --bs-btn-hover-border-color: #0f766e;
+  --bs-btn-color: #c4b5fd;
+  --bs-btn-border-color: #c4b5fd;
+  --bs-btn-hover-color: #1a1033;
+  --bs-btn-hover-bg: #c4b5fd;
+  --bs-btn-hover-border-color: #c4b5fd;
+  --bs-btn-active-color: #1a1033;
+  --bs-btn-active-bg: #ddd6fe;
+  --bs-btn-active-border-color: #ddd6fe;
 }
 
 .btn-ghost-light {
@@ -250,7 +257,7 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: #08111f;
+  --background-color: #120a24;
   --default-color: #ffffff;
   --heading-color: #ffffff;
   color: var(--default-color);
@@ -342,7 +349,7 @@ h6 {
     height: 2px;
     bottom: -6px;
     left: 0;
-    background-color: #5eead4;
+    background-color: #c4b5fd;
     visibility: hidden;
     width: 0px;
     transition: all 0.3s ease-in-out 0s;
@@ -397,7 +404,7 @@ h6 {
 
   .navmenu a,
   .navmenu a:focus {
-    color: #0f172a;
+    color: var(--default-color);
     padding: 10px 20px;
     font-family: var(--nav-font);
     font-size: 17px;
@@ -461,7 +468,7 @@ h6 {
     position: fixed;
     overflow: hidden;
     inset: 0;
-    background: rgba(33, 37, 41, 0.8);
+    background: rgba(18, 10, 36, 0.9);
     transition: 0.3s;
   }
 
@@ -732,7 +739,7 @@ section,
 .hero .hero-eyebrow {
   margin: 0 0 22px;
   padding-left: 14px;
-  border-left: 3px solid #2dd4bf;
+  border-left: 3px solid var(--accent-color);
   color: rgba(255, 255, 255, 0.78);
   font-size: 12px;
   font-weight: 700;
@@ -752,7 +759,7 @@ section,
 }
 
 .hero h1 .typed-cursor {
-  color: #2dd4bf;
+  color: var(--accent-color);
   font-weight: 400;
 }
 
@@ -792,8 +799,8 @@ section,
 }
 
 .hero .hero-contact-link:hover {
-  color: #5eead4;
-  border-color: #5eead4;
+  color: var(--accent-color);
+  border-color: var(--accent-color);
 }
 
 .hero .hero-disciplines {
@@ -813,7 +820,7 @@ section,
 }
 
 .hero .hero-disciplines span {
-  color: #2dd4bf;
+  color: var(--accent-color);
 }
 
 .hero .hero-portrait {
@@ -934,7 +941,7 @@ section,
   left: 18px;
   padding: 15px 18px;
   color: #ffffff;
-  background: rgba(15, 23, 42, 0.84);
+  background: rgba(18, 10, 36, 0.88);
   border-left: 3px solid var(--accent-color);
   backdrop-filter: blur(8px);
 }
@@ -1271,7 +1278,7 @@ section,
   padding: 112px 0 84px;
   background:
     radial-gradient(circle at 92% 14%, color-mix(in srgb, var(--accent-color), transparent 78%) 0, transparent 27%),
-    linear-gradient(135deg, #f8fbfb 0%, #edf7f5 52%, #f7fafc 100%);
+    linear-gradient(135deg, #1a1033 0%, #241644 52%, #1e1239 100%);
 }
 
 .banner-small::before,
@@ -1338,7 +1345,7 @@ section,
   border: 1px solid color-mix(in srgb, var(--accent-color), transparent 76%);
   border-radius: 999px;
   color: var(--heading-color);
-  background: rgba(255, 255, 255, 0.74);
+  background: rgba(255, 255, 255, 0.07);
   box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
   font-size: 14px;
   font-weight: 700;
@@ -1351,9 +1358,9 @@ section,
 .banner-illustration {
   position: relative;
   padding: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 26px;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.06);
   box-shadow: 0 28px 70px rgba(15, 23, 42, 0.16);
   transform: rotate(1.5deg);
 }
@@ -1376,7 +1383,7 @@ section,
   padding: 12px 16px;
   border-radius: 12px;
   color: var(--heading-color);
-  background: rgba(255, 255, 255, 0.94);
+  background: rgba(40, 26, 70, 0.96);
   box-shadow: 0 14px 35px rgba(15, 23, 42, 0.16);
   font-size: 14px;
   font-weight: 800;
@@ -1428,7 +1435,7 @@ section,
   min-height: 390px;
   padding: 30px;
   border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
-  background: #e5efed;
+  background: #21143d;
 }
 
 .certificates .certificate-backdrop {
@@ -1479,7 +1486,7 @@ section,
   border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 999px;
   color: var(--heading-color);
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(18, 10, 36, 0.9);
   box-shadow: 0 8px 24px rgba(15, 23, 42, 0.14);
   font-size: 13px;
   font-weight: 800;
@@ -1676,21 +1683,23 @@ section,
 # Projects Section
 --------------------------------------------------------------*/
 .projects {
-  background: linear-gradient(180deg, #ffffff 0%, var(--background-color) 100%);
+  background: linear-gradient(180deg, #21143d 0%, var(--background-color) 100%);
 }
 
 .projects .project-card {
+  color: var(--default-color);
+  background: var(--surface-color);
   border-radius: 14px;
   overflow: hidden;
-  border: 1px solid rgba(15, 23, 42, 0.08) !important;
-  box-shadow: 0 16px 34px rgba(15, 23, 42, 0.08) !important;
+  border: 1px solid rgba(196, 181, 253, 0.16) !important;
+  box-shadow: 0 16px 34px rgba(8, 4, 18, 0.24) !important;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .projects .project-card:hover {
   transform: translateY(-6px);
   border-color: color-mix(in srgb, var(--accent-color), transparent 55%) !important;
-  box-shadow: 0 22px 48px rgba(15, 23, 42, 0.14) !important;
+  box-shadow: 0 22px 48px rgba(8, 4, 18, 0.34) !important;
 }
 
 .projects .project-card .card-img-top {
@@ -1745,15 +1754,26 @@ section,
   min-height: 28px;
   padding: 5px 10px;
   border-radius: 999px;
-  background: #eef6f5;
-  color: #115e59;
-  border: 1px solid rgba(15, 118, 110, 0.18);
+  background: rgba(196, 181, 253, 0.11);
+  color: #ddd6fe;
+  border: 1px solid rgba(196, 181, 253, 0.24);
   font-size: 12px;
   font-weight: 800;
 }
 
 .projects .project-link-group .btn {
   min-height: 36px;
+}
+
+.projects .btn-outline-dark {
+  --bs-btn-color: #ddd6fe;
+  --bs-btn-border-color: rgba(221, 214, 254, 0.58);
+  --bs-btn-hover-color: #1a1033;
+  --bs-btn-hover-bg: #ddd6fe;
+  --bs-btn-hover-border-color: #ddd6fe;
+  --bs-btn-active-color: #1a1033;
+  --bs-btn-active-bg: #c4b5fd;
+  --bs-btn-active-border-color: #c4b5fd;
 }
 
 @media (max-width: 991px) {
@@ -2173,7 +2193,7 @@ section,
 .contact .php-email-form input[type=text]::placeholder,
 .contact .php-email-form input[type=email]::placeholder,
 .contact .php-email-form textarea::placeholder {
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
 }
 
 .contact .php-email-form button[type=submit] {
