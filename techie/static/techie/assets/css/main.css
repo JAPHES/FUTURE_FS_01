@@ -1789,6 +1789,26 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 10%);
 }
 
+.projects .project-collaboration {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin: 2px 0 18px;
+  padding: 12px 14px;
+  border-left: 3px solid var(--accent-color);
+  border-radius: 0 9px 9px 0;
+  background: rgba(196, 181, 253, 0.08);
+  color: color-mix(in srgb, var(--default-color), transparent 5%);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.projects .project-collaboration i {
+  flex: 0 0 auto;
+  margin-top: 2px;
+  color: var(--accent-color);
+}
+
 .projects .project-tags {
   display: flex;
   flex-wrap: wrap;

@@ -32,6 +32,26 @@ class SeoTests(SimpleTestCase):
         graph_types = {node["@type"] for node in structured_data["@graph"]}
         self.assertTrue({"ProfilePage", "Person", "WebSite", "Service"}.issubset(graph_types))
 
+    def test_home_features_affordable_housing_collaboration(self):
+        response = self.client.get(reverse("techie:home"), **self.request_options)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Affordable Housing Price Estimator")
+        self.assertContains(response, "AI model trained by data analyst Clinton Munene")
+        self.assertContains(response, "dashboard and web application built by Japhes Murithi")
+        self.assertContains(
+            response,
+            "https://affordable-housing-price-estimator.vercel.app/",
+        )
+        self.assertContains(
+            response,
+            "https://github.com/JAPHES/Affordable-housing-price-estimator",
+        )
+        self.assertRegex(
+            response.content.decode(),
+            r"/static/techie/assets/img/portfolio/affordable-housing-estimator(?:\.[0-9a-f]+)?\.png",
+        )
+
     def test_each_service_has_unique_metadata_content_and_structured_data(self):
         titles = set()
         descriptions = set()
