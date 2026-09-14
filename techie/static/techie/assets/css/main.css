@@ -1809,6 +1809,33 @@ section,
   color: var(--accent-color);
 }
 
+.projects .project-collaborator-contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: -7px 0 18px;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.projects .project-collaborator-contact i,
+.projects .project-collaborator-contact a {
+  color: var(--accent-color);
+}
+
+.projects .project-collaborator-contact a {
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--accent-color), transparent 55%);
+  text-underline-offset: 3px;
+}
+
+.projects .project-collaborator-contact a:hover {
+  text-decoration-color: var(--accent-color);
+}
+
 .projects .project-tags {
   display: flex;
   flex-wrap: wrap;

@@ -39,6 +39,9 @@ class SeoTests(SimpleTestCase):
         self.assertContains(response, "Affordable Housing Price Estimator")
         self.assertContains(response, "AI model trained by data analyst Clinton Munene")
         self.assertContains(response, "dashboard and web application built by Japhes Murithi")
+        self.assertContains(response, "Need help with a data analysis task?")
+        self.assertContains(response, 'href="mailto:clintonmunene2000@gmail.com"')
+        self.assertContains(response, "Reach out to Clinton Munene")
         self.assertContains(
             response,
             "https://affordable-housing-price-estimator.vercel.app/",
