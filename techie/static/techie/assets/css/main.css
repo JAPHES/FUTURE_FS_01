@@ -1813,27 +1813,42 @@ section,
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
   margin: -7px 0 18px;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   font-size: 13px;
   line-height: 1.5;
 }
 
-.projects .project-collaborator-contact i,
-.projects .project-collaborator-contact a {
+.projects .project-collaborator-contact span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.projects .project-collaborator-contact span i {
   color: var(--accent-color);
 }
 
 .projects .project-collaborator-contact a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 45%);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent-color), transparent 88%);
+  color: var(--accent-color);
   font-weight: 600;
-  text-decoration: underline;
-  text-decoration-color: color-mix(in srgb, var(--accent-color), transparent 55%);
-  text-underline-offset: 3px;
+  text-decoration: none;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
 .projects .project-collaborator-contact a:hover {
-  text-decoration-color: var(--accent-color);
+  border-color: var(--accent-color);
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  transform: translateY(-1px);
 }
 
 .projects .project-tags {
