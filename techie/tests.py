@@ -67,6 +67,14 @@ class SeoTests(SimpleTestCase):
         )
         self.assertNotContains(response, "https://uppaweb-production.up.railway.app/")
 
+    def test_service_card_navigation_is_temporarily_hidden(self):
+        response = self.client.get(reverse("techie:home"), **self.request_options)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertNotContains(response, 'class="service-link"')
+        self.assertNotContains(response, "View service")
+        self.assertNotContains(response, "<h3><a href=")
+
     def test_each_service_has_unique_metadata_content_and_structured_data(self):
         titles = set()
         descriptions = set()

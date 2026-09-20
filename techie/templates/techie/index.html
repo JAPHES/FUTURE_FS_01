@@ -390,11 +390,16 @@
               <span>{{ service.number }}</span>
               <i class="bi {{ service.icon }}" aria-hidden="true"></i>
             </div>
+            {% comment %}
             <h3><a href="{% url 'techie:service_detail' service.slug %}">{{ service.name }}</a></h3>
+            {% endcomment %}
+            <h3>{{ service.name }}</h3>
             <p>{{ service.summary }}</p>
+            {% comment %}
             <a class="service-link" href="{% url 'techie:service_detail' service.slug %}" aria-label="Learn more about {{ service.name }}">
               View service <i class="bi bi-arrow-right" aria-hidden="true"></i>
             </a>
+            {% endcomment %}
           </article>
           {% endfor %}
         </div>
