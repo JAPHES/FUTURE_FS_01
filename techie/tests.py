@@ -32,6 +32,21 @@ class SeoTests(SimpleTestCase):
         graph_types = {node["@type"] for node in structured_data["@graph"]}
         self.assertTrue({"ProfilePage", "Person", "WebSite", "Service"}.issubset(graph_types))
 
+    def test_about_uses_coding_workspace_image(self):
+        response = self.client.get(reverse("techie:home"), **self.request_options)
+        content = response.content.decode()
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(
+            response,
+            'alt="Developer workspace with code displayed across two monitors"',
+        )
+        self.assertContains(response, "Building Practical Solutions")
+        self.assertRegex(
+            content,
+            r"/static/techie/assets/img/about-coding-workspace(?:\.[0-9a-f]+)?\.png",
+        )
+
     def test_home_features_affordable_housing_collaboration(self):
         response = self.client.get(reverse("techie:home"), **self.request_options)
 
