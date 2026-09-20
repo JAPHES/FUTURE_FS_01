@@ -93,6 +93,9 @@ class SeoTests(SimpleTestCase):
         self.assertContains(response, "AWS Skill Builder learning paths")
         self.assertContains(response, "student project showcases")
         self.assertContains(response, "February 2026 - September 2026")
+        self.assertContains(response, 'class="resume-column-content"', count=2)
+        self.assertContains(response, 'class="resume-toggle"', count=2)
+        self.assertContains(response, 'aria-expanded="false"', count=2)
 
     def test_each_service_has_unique_metadata_content_and_structured_data(self):
         titles = set()

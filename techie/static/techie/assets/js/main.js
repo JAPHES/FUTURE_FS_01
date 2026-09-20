@@ -251,6 +251,67 @@
   });
 
   /**
+   * Keep resume columns balanced until the longer column is expanded
+   */
+  const resumeColumns = Array.from(document.querySelectorAll('.resume-column'));
+
+  if (resumeColumns.length > 1) {
+    function resetResumeColumn(column) {
+      const content = column.querySelector('.resume-column-content');
+      const toggle = column.querySelector('.resume-toggle');
+
+      column.classList.remove('is-collapsible', 'is-expanded');
+      content.style.maxHeight = 'none';
+      toggle.hidden = true;
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.querySelector('span').textContent = 'Read more';
+    }
+
+    function balanceResumeColumns() {
+      resumeColumns.forEach(resetResumeColumn);
+
+      const naturalHeights = resumeColumns.map((column) => (
+        column.querySelector('.resume-column-content').scrollHeight
+      ));
+      const sharedHeight = Math.min(...naturalHeights);
+
+      resumeColumns.forEach((column, index) => {
+        if (naturalHeights[index] <= sharedHeight + 16) return;
+
+        const content = column.querySelector('.resume-column-content');
+        const toggle = column.querySelector('.resume-toggle');
+
+        column.dataset.collapsedHeight = sharedHeight;
+        column.classList.add('is-collapsible');
+        content.style.maxHeight = `${sharedHeight}px`;
+        toggle.hidden = false;
+      });
+    }
+
+    resumeColumns.forEach((column) => {
+      const toggle = column.querySelector('.resume-toggle');
+      const content = column.querySelector('.resume-column-content');
+
+      toggle.addEventListener('click', () => {
+        const isExpanded = column.classList.toggle('is-expanded');
+        const collapsedHeight = column.dataset.collapsedHeight;
+
+        content.style.maxHeight = isExpanded ? `${content.scrollHeight}px` : `${collapsedHeight}px`;
+        toggle.setAttribute('aria-expanded', String(isExpanded));
+        toggle.querySelector('span').textContent = isExpanded ? 'Show less' : 'Read more';
+      });
+    });
+
+    let resumeResizeTimer;
+    window.addEventListener('resize', () => {
+      window.clearTimeout(resumeResizeTimer);
+      resumeResizeTimer = window.setTimeout(balanceResumeColumns, 150);
+    });
+    window.addEventListener('load', balanceResumeColumns);
+    balanceResumeColumns();
+  }
+
+  /**
    * Init swiper sliders
    */
   function initSwiper() {
