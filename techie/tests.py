@@ -84,6 +84,16 @@ class SeoTests(SimpleTestCase):
         ):
             self.assertContains(response, f"service-item--{service_slug}", count=1)
 
+    def test_resume_includes_aws_leadership_and_completed_alx_course(self):
+        response = self.client.get(reverse("techie:home"), **self.request_options)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "AWS Student Builder Group Leader")
+        self.assertContains(response, "Amazon Web Services (AWS) · Taita Taveta University")
+        self.assertContains(response, "AWS Skill Builder learning paths")
+        self.assertContains(response, "student project showcases")
+        self.assertContains(response, "February 2026 - September 2026")
+
     def test_each_service_has_unique_metadata_content_and_structured_data(self):
         titles = set()
         descriptions = set()
