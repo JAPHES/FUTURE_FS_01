@@ -56,6 +56,17 @@ class SeoTests(SimpleTestCase):
             r"/static/techie/assets/img/portfolio/affordable-housing-estimator(?:\.[0-9a-f]+)?\.png",
         )
 
+    def test_universal_partnership_project_uses_current_live_url(self):
+        response = self.client.get(reverse("techie:home"), **self.request_options)
+        content = response.content.decode()
+
+        self.assertEqual(response.status_code, 200)
+        self.assertRegex(
+            content,
+            r'(?s)Universal Partnership Association.*?href="https://jaredetaba\.secora\.dev/"',
+        )
+        self.assertNotContains(response, "https://uppaweb-production.up.railway.app/")
+
     def test_each_service_has_unique_metadata_content_and_structured_data(self):
         titles = set()
         descriptions = set()
