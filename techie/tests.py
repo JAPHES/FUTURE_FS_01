@@ -75,6 +75,15 @@ class SeoTests(SimpleTestCase):
         self.assertNotContains(response, "View service")
         self.assertNotContains(response, "<h3><a href=")
 
+        for service_slug in (
+            "web-application-development",
+            "ui-ux-design",
+            "mentorship-training",
+            "backend-api-development",
+            "iot-projects",
+        ):
+            self.assertContains(response, f"service-item--{service_slug}", count=1)
+
     def test_each_service_has_unique_metadata_content_and_structured_data(self):
         titles = set()
         descriptions = set()

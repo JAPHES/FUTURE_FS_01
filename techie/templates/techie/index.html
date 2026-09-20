@@ -385,7 +385,7 @@
       <div class="container">
         <div class="services-grid">
           {% for service in services %}
-          <article class="service-item" data-aos="fade-up" data-aos-delay="{% cycle '100' '150' '200' '250' '300' %}">
+          <article class="service-item service-item--{{ service.slug }}" data-aos="fade-up" data-aos-delay="{% cycle '100' '150' '200' '250' '300' %}">
             <div class="service-meta">
               <span>{{ service.number }}</span>
               <i class="bi {{ service.icon }}" aria-hidden="true"></i>

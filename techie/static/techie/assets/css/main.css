@@ -1191,26 +1191,48 @@ section,
 # Services Section
 --------------------------------------------------------------*/
 .services .service-item {
+  --service-accent: var(--accent-color);
+  position: relative;
   grid-column: span 2;
   min-height: 250px;
   padding: clamp(25px, 3vw, 38px);
-  background: var(--surface-color);
-  transition: background-color 0.2s ease;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--service-accent), transparent 68%);
+  border-top: 3px solid var(--service-accent);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--surface-color), var(--service-accent) 4%);
+  box-shadow: 0 14px 32px rgba(8, 4, 20, 0.18);
+  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .services .services-grid {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 1px;
-  padding: 1px;
-  overflow: hidden;
-  border-radius: 18px;
-  background: color-mix(in srgb, var(--default-color), transparent 86%);
-  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
+  gap: 20px;
 }
 
 .services .service-item:nth-child(n + 4) {
   grid-column: span 3;
+}
+
+.services .service-item--web-application-development {
+  --service-accent: #c4b5fd;
+}
+
+.services .service-item--ui-ux-design {
+  --service-accent: #7dd3fc;
+}
+
+.services .service-item--mentorship-training {
+  --service-accent: #fcd34d;
+}
+
+.services .service-item--backend-api-development {
+  --service-accent: #6ee7b7;
+}
+
+.services .service-item--iot-projects {
+  --service-accent: #fda4af;
 }
 
 .services .service-meta {
@@ -1221,7 +1243,10 @@ section,
 }
 
 .services .service-meta span {
-  color: var(--accent-color);
+  padding: 5px 8px;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--service-accent), transparent 88%);
+  color: var(--service-accent);
   font-family: var(--heading-font);
   font-size: 12px;
   font-weight: 800;
@@ -1229,10 +1254,17 @@ section,
 }
 
 .services .service-meta i {
-  color: color-mix(in srgb, var(--default-color), transparent 42%);
-  font-size: 26px;
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--service-accent), transparent 64%);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--service-accent), transparent 90%);
+  color: var(--service-accent);
+  font-size: 24px;
   line-height: 1;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
 }
 
 .services .service-item h3 {
@@ -1248,7 +1280,7 @@ section,
 }
 
 .services .service-item h3 a:hover {
-  color: var(--accent-color);
+  color: var(--service-accent);
 }
 
 .services .service-item p {
@@ -1264,7 +1296,7 @@ section,
   align-items: center;
   gap: 8px;
   margin-top: 22px;
-  color: var(--accent-color);
+  color: var(--service-accent);
   font-size: 14px;
   font-weight: 800;
 }
@@ -1278,11 +1310,16 @@ section,
 }
 
 .services .service-item:hover {
-  background: color-mix(in srgb, var(--surface-color), var(--accent-color) 4%);
+  border-color: color-mix(in srgb, var(--service-accent), transparent 38%);
+  background: color-mix(in srgb, var(--surface-color), var(--service-accent) 7%);
+  box-shadow: 0 18px 38px rgba(8, 4, 20, 0.28);
+  transform: translateY(-3px);
 }
 
 .services .service-item:hover .service-meta i {
-  color: var(--accent-color);
+  background: var(--service-accent);
+  color: var(--contrast-color);
+  transform: translateY(-2px);
 }
 
 @media (max-width: 991px) {
