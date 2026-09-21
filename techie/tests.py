@@ -47,6 +47,19 @@ class SeoTests(SimpleTestCase):
             r"/static/techie/assets/img/about-coding-workspace(?:\.[0-9a-f]+)?\.png",
         )
 
+    def test_home_omits_unused_frontend_dependencies(self):
+        response = self.client.get(reverse("techie:home"), **self.request_options)
+
+        self.assertEqual(response.status_code, 200)
+        for unused_dependency in (
+            "glightbox",
+            "imagesloaded",
+            "isotope-layout",
+            "swiper",
+            "waypoints",
+        ):
+            self.assertNotContains(response, unused_dependency)
+
     def test_home_features_affordable_housing_collaboration(self):
         response = self.client.get(reverse("techie:home"), **self.request_options)
 
