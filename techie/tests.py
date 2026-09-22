@@ -42,6 +42,14 @@ class SeoTests(SimpleTestCase):
             'alt="Developer workspace with code displayed across two monitors"',
         )
         self.assertContains(response, "Building Practical Solutions")
+        self.assertContains(
+            response,
+            "Building practical technology and stronger communities.",
+        )
+        self.assertContains(response, "full-stack developer, community builder, and aspiring entrepreneur")
+        self.assertContains(response, "technology, innovation, and entrepreneurship")
+        self.assertContains(response, "Full-Stack Development")
+        self.assertContains(response, "Community Building")
         self.assertRegex(
             content,
             r"/static/techie/assets/img/about-coding-workspace(?:\.[0-9a-f]+)?\.png",

@@ -1018,6 +1018,15 @@ section,
   line-height: 1.85;
 }
 
+.about .about-content p + p {
+  margin-top: 16px;
+}
+
+.about .about-content p strong {
+  color: var(--heading-color);
+  font-weight: 700;
+}
+
 .about .about-focus {
   display: flex;
   flex-wrap: wrap;
