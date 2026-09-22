@@ -36,7 +36,15 @@ def service_detail(request, slug):
                     "@type": "Person",
                     "@id": f"{settings.CANONICAL_SITE_URL}/#person",
                     "name": "Japhes Murithi",
+                    "alternateName": "Japhes",
+                    "givenName": "Japhes",
+                    "familyName": "Murithi",
                     "url": f"{settings.CANONICAL_SITE_URL}/",
+                    "sameAs": [
+                        "https://github.com/JAPHES",
+                        "https://www.linkedin.com/in/japhes-murithi-79178a329",
+                        "https://x.com/JaphesMurithi",
+                    ],
                 },
                 "areaServed": {
                     "@type": "Country",

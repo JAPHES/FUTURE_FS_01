@@ -32,6 +32,15 @@ class SeoTests(SimpleTestCase):
         graph_types = {node["@type"] for node in structured_data["@graph"]}
         self.assertTrue({"ProfilePage", "Person", "WebSite", "Service"}.issubset(graph_types))
 
+        person = next(node for node in structured_data["@graph"] if node["@type"] == "Person")
+        self.assertEqual(person["name"], "Japhes Murithi")
+        self.assertEqual(person["alternateName"], "Japhes")
+        self.assertEqual(person["givenName"], "Japhes")
+        self.assertEqual(person["familyName"], "Murithi")
+
+        website = next(node for node in structured_data["@graph"] if node["@type"] == "WebSite")
+        self.assertEqual(website["alternateName"], "Japhes Murithi Portfolio")
+
     def test_about_uses_coding_workspace_image(self):
         response = self.client.get(reverse("techie:home"), **self.request_options)
         content = response.content.decode()
@@ -157,6 +166,9 @@ class SeoTests(SimpleTestCase):
                 )
                 self.assertEqual(service_node["url"], canonical_url)
                 self.assertEqual(service_node["provider"]["name"], "Japhes Murithi")
+                self.assertEqual(service_node["provider"]["alternateName"], "Japhes")
+                self.assertEqual(service_node["provider"]["givenName"], "Japhes")
+                self.assertEqual(service_node["provider"]["familyName"], "Murithi")
 
                 titles.add(service["page_title"])
                 descriptions.add(service["meta_description"])
