@@ -101,6 +101,25 @@ class SeoTests(SimpleTestCase):
             r"/static/techie/assets/img/portfolio/affordable-housing-estimator(?:\.[0-9a-f]+)?\.png",
         )
 
+    def test_home_features_tsavo_hub_as_first_project(self):
+        response = self.client.get(reverse("techie:home"), **self.request_options)
+        content = response.content.decode()
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Tsavo Innovation &amp; Incubation Hub Management System")
+        self.assertContains(response, "planned hub visits")
+        self.assertContains(response, "administrator-controlled admission")
+        self.assertContains(response, 'href="https://tsavohub.secora.dev/"')
+        self.assertContains(response, 'href="https://github.com/JAPHES/tsavomgt_hub"')
+        self.assertRegex(
+            content,
+            r"/static/techie/assets/img/portfolio/tsavo-hub-management(?:\.[0-9a-f]+)?\.png",
+        )
+        self.assertLess(
+            content.index("Tsavo Innovation &amp; Incubation Hub Management System"),
+            content.index("Sports Predictor"),
+        )
+
     def test_universal_partnership_project_uses_current_live_url(self):
         response = self.client.get(reverse("techie:home"), **self.request_options)
         content = response.content.decode()
