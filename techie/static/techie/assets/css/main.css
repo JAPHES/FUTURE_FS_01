@@ -1198,6 +1198,42 @@ section,
   border: 2px solid var(--accent-color);
 }
 
+.resume .resume-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin: 4px 0 8px;
+  padding: 14px 16px;
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 68%);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--surface-color), var(--accent-color) 7%);
+}
+
+.resume .resume-cta p {
+  flex: 1 1 280px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.resume .resume-cta strong,
+.resume .resume-cta span {
+  display: block;
+}
+
+.resume .resume-cta strong {
+  margin-bottom: 2px;
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+}
+
+.resume .resume-cta .btn {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
 .resume .resume-column-content {
   overflow: visible;
   transition: max-height 0.35s ease;

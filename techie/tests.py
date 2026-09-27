@@ -161,6 +161,29 @@ class SeoTests(SimpleTestCase):
         self.assertContains(response, 'class="resume-toggle"', count=2)
         self.assertContains(response, 'aria-expanded="false"', count=2)
 
+    def test_resume_includes_bizoach_ambassador_role_and_waitlist_cta(self):
+        response = self.client.get(reverse("techie:home"), **self.request_options)
+        content = response.content.decode()
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "BIZOACH Campus Ambassador")
+        self.assertContains(response, "September 2026 - Present")
+        self.assertContains(response, "Representing BIZOACH on campus and helping grow a community")
+        self.assertContains(response, "Building and growing the BIZOACH campus community.")
+        self.assertContains(response, "entrepreneurship and business-building opportunities")
+        self.assertContains(response, "Build with Intelligence")
+        self.assertContains(response, "Ready to build with intelligence?")
+        self.assertContains(response, "Join BIZOACH Waitlist")
+        self.assertContains(response, 'href="https://www.bizoach.com"')
+        self.assertRegex(
+            content,
+            r'href="https://www\.bizoach\.com"[^>]+target="_blank"[^>]+rel="noopener noreferrer"',
+        )
+        self.assertLess(
+            content.index("BIZOACH Campus Ambassador"),
+            content.index("<h4>Organizer</h4>"),
+        )
+
     def test_each_service_has_unique_metadata_content_and_structured_data(self):
         titles = set()
         descriptions = set()
