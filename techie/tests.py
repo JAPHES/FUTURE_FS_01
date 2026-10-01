@@ -131,6 +131,22 @@ class SeoTests(SimpleTestCase):
             content.index("Sports Predictor"),
         )
 
+    def test_home_features_ecofem_as_third_project(self):
+        response = self.client.get(reverse("techie:home"), **self.request_options)
+        content = response.content.decode()
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "EcoFem")
+        self.assertContains(response, "biodegradable sanitary pad prototypes")
+        self.assertContains(response, 'href="https://ecofem.secora.dev/"')
+        self.assertContains(response, 'href="https://github.com/JAPHES/Ecofem"')
+        self.assertRegex(
+            content,
+            r"/static/techie/assets/img/portfolio/ecofem(?:\.[0-9a-f]+)?\.png",
+        )
+        self.assertLess(content.index("Sports Predictor"), content.index("EcoFem"))
+        self.assertLess(content.index("EcoFem"), content.index("Task Manager Platform"))
+
     def test_universal_partnership_project_uses_current_live_url(self):
         response = self.client.get(reverse("techie:home"), **self.request_options)
         content = response.content.decode()
