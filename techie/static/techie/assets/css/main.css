@@ -322,6 +322,11 @@ h6 {
     padding-right: 0;
   }
 
+  .navmenu>ul>li.nav-hire-item {
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+
   .navmenu a,
   .navmenu a:focus {
     color: rgba(255, 255, 255, 0.88);
@@ -369,6 +374,11 @@ h6 {
   .navmenu .active,
   .navmenu .active:focus {
     color: #ffffff;
+  }
+
+  .navmenu a.nav-hire,
+  .navmenu a.nav-hire:focus {
+    padding: 8px 16px;
   }
 
 }
@@ -453,6 +463,16 @@ h6 {
     transform: rotate(180deg);
   }
 
+  .navmenu .nav-hire-item {
+    margin: 8px 20px;
+  }
+
+  .navmenu a.nav-hire,
+  .navmenu a.nav-hire:focus {
+    justify-content: center;
+    padding: 11px 16px;
+  }
+
   .mobile-nav-active {
     overflow: hidden;
   }
@@ -477,6 +497,42 @@ h6 {
 
   .mobile-nav-active .navmenu>ul {
     display: block;
+  }
+}
+
+.navmenu a.nav-hire,
+.navmenu a.nav-hire:focus,
+.navmenu a.nav-hire.active,
+.navmenu .nav-hire-item:hover>a {
+  color: #ffffff;
+  background-color: #dc2626;
+  border-radius: 999px;
+  box-shadow: 0 0 0 0 rgba(248, 113, 113, 0.42);
+  animation: nav-hire-danger-pulse 2.4s ease-in-out infinite;
+}
+
+.navmenu a.nav-hire:hover,
+.navmenu a.nav-hire:focus-visible {
+  color: #ffffff;
+  background-color: #b91c1c;
+  box-shadow: 0 0 0 5px rgba(248, 113, 113, 0.2);
+  animation: none;
+}
+
+.navmenu>ul>li>a.nav-hire::before {
+  display: none;
+}
+
+@keyframes nav-hire-danger-pulse {
+  0%,
+  100% {
+    background-color: #dc2626;
+    box-shadow: 0 0 0 0 rgba(248, 113, 113, 0.38);
+  }
+
+  50% {
+    background-color: #881337;
+    box-shadow: 0 0 0 5px rgba(248, 113, 113, 0.08);
   }
 }
 

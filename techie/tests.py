@@ -77,6 +77,17 @@ class SeoTests(SimpleTestCase):
         ):
             self.assertNotContains(response, unused_dependency)
 
+    def test_navigation_links_to_resume_and_highlights_hiring_cta(self):
+        response = self.client.get(reverse("techie:home"), **self.request_options)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, '<a href="#resume">Resume</a>', html=True)
+        self.assertContains(
+            response,
+            '<a href="#contact" class="nav-hire">Hire Japhes!</a>',
+            html=True,
+        )
+
     def test_home_features_affordable_housing_collaboration(self):
         response = self.client.get(reverse("techie:home"), **self.request_options)
 
